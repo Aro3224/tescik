@@ -68,34 +68,37 @@ int main()
         {
                 cout<<"Podaj a"<<endl;
                 cin>>a;
-                while(a==0)
+                if(a==0)
                 {
-                    cout<<"a nie moze byc 0, podaj co innego"<<endl;
-                    cin>>a;
+                    cout<<"funkcja jest liniowa"<<endl;
                 }
-                cout<<"Podaj b"<<endl;
-                cin>>b;
-                cout<<"Podaj c"<<endl;
-                cin>>c;
 
-                cout<<"twoja funkcja to: "<<a<<"x^2+"<<b<<"x+"<<c<<endl;
-
-                delta=(b*b)-(4*a*c);
-
-                cout<<"delta= "<<delta<<endl;
-
-                if (delta>0)
+                else
                 {
-                    x1=(-b+sqrt(delta))/(2*a);
-                    x2=(-b-sqrt(delta))/(2*a);
-                    cout<<"miejsca zerowe wynosza: x1="<<x1<<" x2="<<x2<<endl;
+                    cout<<"Podaj b"<<endl;
+                    cin>>b;
+                    cout<<"Podaj c"<<endl;
+                    cin>>c;
+
+                    cout<<"twoja funkcja to: "<<a<<"x^2+"<<b<<"x+"<<c<<endl;
+
+                    delta=(b*b)-(4*a*c);
+
+                    cout<<"delta= "<<delta<<endl;
+
+                    if (delta>0)
+                    {
+                        x1=(-b+sqrt(delta))/(2*a);
+                        x2=(-b-sqrt(delta))/(2*a);
+                        cout<<"miejsca zerowe wynosza: x1="<<x1<<" x2="<<x2<<endl;
+                    }
+                    else if(delta==0)
+                    {
+                        x=-b/(2*a);
+                        cout<<"miejsce zerowe wynosi: "<<x<<endl;
+                    }
+                        else cout<<"funkcja nie ma miejsc zerowych"<<endl;
                 }
-                else if(delta==0)
-                {
-                    x=-b/(2*a);
-                    cout<<"miejsce zerowe wynosi: "<<x<<endl;
-                }
-                else cout<<"funkcja nie ma miejsc zerowych"<<endl;
 
             break;
         }
