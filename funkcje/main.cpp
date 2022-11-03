@@ -1,14 +1,22 @@
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
 int main()
 {
-    float y,a,b,x;
+    float y,a,b,x,c,delta,x1,x2;
     int wybor;
     cout << "Program oblicza miejsce zerowe funkcji" << endl;
-
-    cout<<"ktorym sposobem chcesz obliczac miejsce zerowe funkcji liniowej?"<<endl;
+    cout << "Jakiej funkcji chcesz obliczac miejsca zerowe?"<<endl;
+    cout<<"1. Liniowa"<<endl;
+    cout<<"2. Kwadratowa"<<endl;
+    cin>>wybor;
+    switch(wybor)
+    {
+    case 1:
+        {
+            cout<<"ktorym sposobem chcesz obliczac miejsce zerowe funkcji liniowej?"<<endl;
     cout<<"1. y=ax+b"<<endl;
     cout<<"2. Ax+By+C=0"<<endl;
     cin>>wybor;
@@ -54,6 +62,50 @@ int main()
 
     }
 
+            break;
+        }
+    case 2:
+        {
+                cout<<"Podaj a"<<endl;
+                cin>>a;
+                while(a==0)
+                {
+                    cout<<"a nie moze byc 0, podaj co innego"<<endl;
+                    cin>>a;
+                }
+                cout<<"Podaj b"<<endl;
+                cin>>b;
+                cout<<"Podaj c"<<endl;
+                cin>>c;
+
+                cout<<"twoja funkcja to: "<<a<<"x^2+"<<b<<"x+"<<c<<endl;
+
+                delta=(b*b)-(4*a*c);
+
+                cout<<"delta= "<<delta<<endl;
+
+                if (delta>0)
+                {
+                    x1=(-b+sqrt(delta))/(2*a);
+                    x2=(-b-sqrt(delta))/(2*a);
+                    cout<<"miejsca zerowe wynosza: x1="<<x1<<" x2="<<x2<<endl;
+                }
+                else if(delta==0)
+                {
+                    x=-b/(2*a);
+                    cout<<"miejsce zerowe wynosi: "<<x<<endl;
+                }
+                else cout<<"funkcja nie ma miejsc zerowych"<<endl;
+
+            break;
+        }
+
+    default:
+        {
+            cout<<"podales zla liczbe"<<endl;
+        }
+
+    }
 
     return 0;
 }
