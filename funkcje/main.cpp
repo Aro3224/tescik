@@ -114,18 +114,35 @@ int main()
 
                 case 2:
                     {
+                        cout<<"podaj p"<<endl;
+                        cin>>p;
+                        cout<<"podaj q"<<endl;
+                        cin>>q;
                         cout<<"podaj a"<<endl;
                         cin>>a;
-                        cout<<"podaj b"<<endl;
-                        cin>>b;
-                        cout<<"podaj c"<<endl;
-                        cin>>c;
 
-                        delta=(b*b)-(4*a*c);
-                        p=-b/(2*a);
-                        q=-delta/(4*a);
-                        cout<<"wierzcholek znajduje sie na pozycji: ("<<p<<","<<q<<")"<<endl;
+                        if (a==0) cout<<"a nie moze byc rowne 0"<<endl;
 
+                        else
+                        {
+                                b=-((2*a)*p);
+                                delta=-((4*a)*q);
+
+                            if (delta>0)
+                            {
+                                x1=(-b+sqrt(delta))/(2*a);
+                                x2=(-b-sqrt(delta))/(2*a);
+                                cout<<"miejsca zerowe wynosza: x1="<<x1<<" x2="<<x2<<endl;
+                            }
+
+                            else if(delta==0)
+                            {
+                                x=-b/(2*a);
+                                cout<<"miejsce zerowe wynosi: "<<x<<endl;
+                            }
+                                else cout<<"funkcja nie ma miejsc zerowych"<<endl;
+
+                        }
                         break;
                     }
                 default:
